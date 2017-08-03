@@ -32,4 +32,8 @@ class Control extends MY_Controller{
 		$this->_request($server,'clearProcessLogs',array($worker));
 		Redirect('/');
 	}
+	function Clearall($server){
+		$this->_request($server,'clearAllProcessLogs',array(1));
+		Redirect('/');
+	}
 }

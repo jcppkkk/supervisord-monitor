@@ -79,6 +79,7 @@
 							<a href="<?php echo site_url('/control/stopall/'.$name); ?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-stop icon-white"></i> Stop all</a>
 							<a href="<?php echo site_url('/control/startall/'.$name); ?>" class="btn btn-mini btn-success" type="button"><i class="icon-play icon-white"></i> Start all</a>
 							<a href="<?php echo site_url('/control/restartall/'.$name); ?>" class="btn btn-mini btn-primary" type="button"><i class="icon icon-refresh icon-white"></i> Restart all</a>
+							<a href="<?php echo site_url('/control/clearall/'.$name); ?>" class="btn btn-mini btn-danger" type="button"><i class="icon icon-stop icon-white"></i>Clear all</a>
 						</span>
 						<?php
 						}
@@ -138,7 +139,7 @@
 										<li><a href="zz">Stop</a></li>
 									</ul>
 								</div//-->
-								<div class="actions">
+								<div class="actions" style="width:60px">
 									<?php if($status=='RUNNING'){ ?>
 									<a href="<?php echo site_url('/control/stop/'.$name.'/'.$item_name);?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-stop icon-white"></i></a>
 									<a href="<?php echo site_url('/control/restart/'.$name.'/'.$item_name);?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-refresh icon-white"></i></a>
