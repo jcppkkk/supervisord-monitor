@@ -183,7 +183,7 @@
 		$content = '<div class="well" style="padding:20px;">'+nl2br($message)+'</div>';
 		$content+= '<div class="pull-left"><form method="get" action="<?php echo $this->config->item('redmine_url');?>" style="display:inline" target="_blank">';
 		$content+= '<input type="hidden" name="issue[subject]" value="'+$title+'"/>';
-		$content+= '<input type="hidden" name="issue[description]" value="'+$message+'"/>';
+		$content+= '<input type="hidden" name="issue[description]" value="'+encodeURIComponent($message)+'"/>';
 		$content+= '<input type="hidden" name="issue[assigned_to_id]" value="<?php echo $this->config->item('redmine_assigne_id');?>"/>';
 		$content+= '<input type="submit" class="btn btn-small btn-inverse" value="Start New Ticket"/>';
 		$content+= '</form></div>';
