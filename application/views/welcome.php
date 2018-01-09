@@ -181,8 +181,7 @@
 		$time = new Date();
 		$message = $(this).data('message')+"\n"+$time+"\n"+$time.toDateString();
 		$title = $(this).data('original-title');
-		$content = '<div class="well" style="padding:20px;">'+nl2br($message)+'</div>';
-		$content+= '<div class="pull-left"><form method="get" action="<?php echo $this->config->item('redmine_url');?>" style="display:inline" target="_blank">';
+		$content = '<div class="pull-left"><form method="get" action="<?php echo $this->config->item('redmine_url');?>" style="display:inline" target="_blank">';
 		$content+= '<input type="hidden" name="issue[subject]" value="'+$title+'"/>';
 		$content+= '<input type="hidden" name="issue[description]" value="'+encodeURIComponent($message)+'"/>';
 		$content+= '<input type="hidden" name="issue[assigned_to_id]" value="<?php echo $this->config->item('redmine_assigne_id');?>"/>';
@@ -190,6 +189,7 @@
 		$content+= '</form></div>';
 		$content+= '<div class="pull-right"><a href="#" onclick="$(\'#'+$(this).attr('id')+'\').popover(\'hide\');startTimer();" class="btn btn-small btn-primary">ok</a>&nbsp;&nbsp;';
 		$content+= '<a href="'+$(this).attr('href')+'" class="btn btn-small btn-danger">Clear</a> &nbsp; </div>';
+		$content+= '<div class="well" style="padding:20px;">'+nl2br($message)+'</div>';
 		return $content;
 	}
 	$('.pop').popover(
