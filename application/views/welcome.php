@@ -92,7 +92,7 @@
 						if($item['group'] != $item['name']) $item_name = $item['group'].":".$item['name'];
 						else $item_name = $item['name'];
 						
-						$check = $CI->_request($name,'readProcessStderrLog',array($item_name,-1000,0));
+						$check = $CI->_request($name,'readProcessStderrLog',array($item_name,-2500,0));
 						if(is_array($check)) $check = print_r($check,1);
 						
 						if(!is_array($item)){
