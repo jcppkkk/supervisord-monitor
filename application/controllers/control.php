@@ -33,7 +33,7 @@ class Control extends MY_Controller{
 		Redirect('/');
 	}
 	function Clearall($server){
-		$this->_request($server,'clearAllProcessLogs',array(1));
+		$this->_request($server,'clearAllProcessLogs');
 		Redirect('/');
 	}
 }
