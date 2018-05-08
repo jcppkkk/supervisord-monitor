@@ -82,15 +82,14 @@
           <?php
           $CI = &get_instance();
           foreach($procs as $item) {
-            $item_name = ($item['group'] != $item['name']) ? $item['group'].":".$item['name'] : $item['name'];
-            $check = $CI->_request($name,'readProcessStderrLog',array($item_name,0,0));
-            if(is_array($check)) $check = print_r($check,1);
-
             if(!is_array($item)) {
                 echo '<tr><td colspan="4">'.$item.'</td></tr>';
                 echo '<tr><td colspan="4">For Troubleshooting <a href="https://github.com/mlazarov/supervisord-monitor#troubleshooting" target="_blank">check this guide</a></td></tr>';
                 continue;
             }
+            $item_name = ($item['group'] != $item['name']) ? $item['group'].":".$item['name'] : $item['name'];
+            $check = $CI->_request($name,'readProcessStderrLog',array($item_name,0,0));
+            if(is_array($check)) $check = print_r($check,1);
 
             $pid = $uptime = '&nbsp;';
             $status = $item['statename'];
@@ -153,7 +152,10 @@
   </div> <!-- /container -->
   
   <div class="footer">
-    <p>Powered by <a href="https://github.com/mlazarov/supervisord-monitor" target="_blank">Supervisord Monitor</a> | Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+    <p>Powered by <a href="https://github.com/mlazarov/supervisord-monitor" target="_blank">Supervisord Monitor</a>
+      | Page rendered in <strong>{elapsed_time}</strong> seconds
+      | <?=gethostname()?>
+    </p>
   </div>
   <script>
   function show_content($param) {

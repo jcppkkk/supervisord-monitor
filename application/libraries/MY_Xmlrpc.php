@@ -3,7 +3,7 @@ class MY_Xmlrpc extends CI_Xmlrpc {
 	function setCredentials($username, $password) {
 		$this->client->setCredentials($username, $password);
 	}
-	function server($url, $port=80){
+	function server($url, $port=80, $proxy=false, $proxy_port=8080){
 		if (substr($url, 0, 4) != "http"){
 			$url = "http://".$url;
 		}
