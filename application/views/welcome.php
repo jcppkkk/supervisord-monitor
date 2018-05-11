@@ -88,7 +88,7 @@
                 continue;
             }
             $item_name = ($item['group'] != $item['name']) ? $item['group'].":".$item['name'] : $item['name'];
-            $check = $CI->_request($name,'readProcessStderrLog',array($item_name,0,0));
+            $check = $CI->_request($name,'readProcessStderrLog',array($item_name,-10000,0));
             if(is_array($check)) $check = print_r($check,1);
 
             $pid = $uptime = '&nbsp;';
