@@ -68,8 +68,8 @@
               <?php if(isset($cfg[$name]['username'])) { ?>
               <i class="icon-lock icon-green" style="color:blue" title="Authenticated server connection"></i>
               <?php } ?>
-              &nbsp;<i><?=$version[$name] ?></i>
               <?php if(!isset($procs['error'])) { ?>
+              &nbsp;<i><?=$version[$name] ?></i>
               <span class="server-btns pull-right">
                 <a href="<?=site_url('/control/stopall/'.$name)?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-stop icon-white"></i> Stop all</a>
                 <a href="<?=site_url('/control/startall/'.$name)?>" class="btn btn-mini btn-success" type="button"><i class="icon-play icon-white"></i> Start all</a>
